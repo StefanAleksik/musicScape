@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <script>
+    // Fade in on start
+    $(document).ready(function() {
+      $("body").hide().fadeIn(2000);
+    });
+  </script>
+
+  <div style="display: table; height: 100%; width:100%; margin: 15em auto; overflow: hidden;">
+    <div style="display: table-cell; vertical-align: middle; text-align:center;">
+      <div class="t4">musicScapes</div>
+      <div class="t5">landscapes based on your latest Spotify listens</div>
+      <button id="startButton" class="t3">START</button>
+    </div>
+  </div>
+
+
+  <script>
+    // Start button
+    document.getElementById("startButton").onclick = function() {
+      window.location.href = '/login';
+    };
+    // Button style
+    var c1 = randomColor({
+      luminosity: 'light'
+    });
+    var c2 = randomColor({
+      luminosity: 'light'
+    });
+    $("#startButton").mouseenter(function() {
+      $(this).css("background", "red").css("background", "-webkit-linear-gradient(" + c1 + ", " + c2 + ")").css("background", "-o-linear-gradient(" + c1 + ", " + c2 + ")").css("background", "-moz-linear-gradient(" + c1 + ", " + c2 + ")").css(
+        "background",
+        " linear-gradient(" + c1 + ", " + c2 + ")");
+    }).mouseleave(function() {
+      $(this).css("background", "#d1d1d1");
+    });
+  </script>
+  <!--<a href="/login">Login</a>-->
+</body>
+
+</html>
